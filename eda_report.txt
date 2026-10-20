@@ -1,0 +1,128 @@
+
+========== DATASET OVERVIEW ==========
+Shape: (300, 19)
+
+First 5 rows:
+  shipment_id origin_port  ... actual_final_delivery  final_delay_hours
+0    SHP-0001      Mumbai  ...   2025-10-22 03:28:13          17.048612
+1    SHP-0002    Shanghai  ...   2025-02-11 10:04:47          34.359688
+2    SHP-0003   Singapore  ...   2025-05-04 09:52:44          46.350176
+3    SHP-0004       Dubai  ...   2025-05-20 09:29:18           9.047841
+4    SHP-0005   Singapore  ...   2025-03-14 01:20:41          47.062834
+
+[5 rows x 19 columns]
+
+Column names:
+['shipment_id', 'origin_port', 'destination_port', 'route_distance_km', 'scheduled_departure', 'actual_departure', 'scheduled_port_arrival', 'actual_port_arrival', 'scheduled_final_arrival', 'departure_delay_hours', 'port_arrival_delay_hours', 'port_congestion_index', 'weather_severity', 'expected_port_processing_hours', 'actual_customs_clearance', 'actual_port_processing_hours', 'scheduled_customs_clearance', 'actual_final_delivery', 'final_delay_hours']
+
+Data types:
+shipment_id                           str
+origin_port                           str
+destination_port                      str
+route_distance_km                 float64
+scheduled_departure                   str
+actual_departure                      str
+scheduled_port_arrival                str
+actual_port_arrival                   str
+scheduled_final_arrival               str
+departure_delay_hours             float64
+port_arrival_delay_hours          float64
+port_congestion_index             float64
+weather_severity                  float64
+expected_port_processing_hours    float64
+actual_customs_clearance              str
+actual_port_processing_hours      float64
+scheduled_customs_clearance           str
+actual_final_delivery                 str
+final_delay_hours                 float64
+dtype: object
+
+Statistical summary:
+                                count unique  ...        75%        max
+shipment_id                       300    300  ...        NaN        NaN
+origin_port                       300      6  ...        NaN        NaN
+destination_port                  300      3  ...        NaN        NaN
+route_distance_km               300.0    NaN  ...     9300.0    10400.0
+scheduled_departure               300    295  ...        NaN        NaN
+actual_departure                  300    300  ...        NaN        NaN
+scheduled_port_arrival            300    300  ...        NaN        NaN
+actual_port_arrival               300    300  ...        NaN        NaN
+scheduled_final_arrival           300    300  ...        NaN        NaN
+departure_delay_hours           300.0    NaN  ...   8.038711  26.240537
+port_arrival_delay_hours        300.0    NaN  ...  12.465618  28.169062
+port_congestion_index           300.0    NaN  ...   0.694526    0.98182
+weather_severity                300.0    NaN  ...   0.536041   0.922863
+expected_port_processing_hours  300.0    NaN  ...  42.097257  59.687195
+actual_customs_clearance          300    300  ...        NaN        NaN
+actual_port_processing_hours    300.0    NaN  ...  51.367509  75.458762
+scheduled_customs_clearance       300    300  ...        NaN        NaN
+actual_final_delivery             300    300  ...        NaN        NaN
+final_delay_hours               300.0    NaN  ...  46.566363  82.788874
+
+[19 rows x 11 columns]
+
+========== MISSING VALUES ==========
+Empty DataFrame
+Columns: [Missing_Count, Missing_Percentage]
+Index: []
+
+Duplicate rows: 0
+
+========== TARGET ANALYSIS ==========
+count    300.000000
+mean      35.315416
+std       17.120685
+min       -9.476181
+25%       23.386173
+50%       34.528330
+75%       46.566363
+max       82.788874
+Name: final_delay_hours, dtype: float64
+On-time or early deliveries: 4
+Late deliveries: 296
+
+========== CORRELATION WITH TARGET ==========
+port_congestion_index             0.622083
+actual_port_processing_hours      0.600064
+expected_port_processing_hours    0.419708
+port_arrival_delay_hours          0.329675
+weather_severity                  0.279745
+departure_delay_hours             0.211226
+route_distance_km                 0.037820
+Name: final_delay_hours, dtype: float64
+
+Average final delay by origin_port:
+             count       mean     median
+origin_port                             
+Colombo         29  40.985164  39.210693
+Dubai           26  37.236813  36.949427
+Chennai         59  35.238505  34.686884
+Singapore       66  35.105225  36.649825
+Mumbai          60  33.945518  33.557031
+Shanghai        60  33.419167  30.614471
+
+Average final delay by destination_port:
+                  count       mean     median
+destination_port                             
+Hamburg              97  37.237096  34.576224
+Rotterdam           137  34.999300  36.142366
+Singapore            66  33.147308  32.194007
+
+Average delay by departure month:
+departure_month
+1     40.715130
+2     43.041776
+3     29.712749
+4     34.898321
+5     25.388476
+6     38.858776
+7     35.978875
+8     32.455731
+9     35.959447
+10    36.477027
+11    34.967839
+12    37.950402
+Name: final_delay_hours, dtype: float64
+
+EDA completed.
+Plots and correlation output saved in: eda_plots/
