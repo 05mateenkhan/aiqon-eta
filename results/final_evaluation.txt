@@ -1,0 +1,4 @@
+--- Final Evaluation Report ---
+Mean Absolute Error (MAE): 8.9195 hours
+Root Mean Squared Error (RMSE): 11.0337 hours
+R-squared (R2): 0.6193
