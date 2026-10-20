@@ -1,0 +1,10 @@
+--- Baseline Model Report ---
+Training set size: 240
+Testing set size: 60
+Numerical features: ['route_distance_km', 'departure_delay_hours', 'port_arrival_delay_hours', 'port_congestion_index', 'weather_severity', 'expected_port_processing_hours', 'departure_month', 'departure_weekday', 'scheduled_duration_hours']
+Categorical features: ['origin_port', 'destination_port', 'scheduled_departure', 'scheduled_port_arrival', 'scheduled_final_arrival', 'scheduled_customs_clearance']
+----------------------------
+Mean Absolute Error (MAE): 11.7920
+Root Mean Squared Error (RMSE): 14.1420
+R-squared (R2): 0.3746
+----------------------------
